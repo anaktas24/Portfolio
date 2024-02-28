@@ -1,11 +1,15 @@
+import '../assets/footer.css'
+
 function Footer(){
   return (
-    <div>
-      <ul>
-        <li>
-          <a href="">Contact</a>
-        </li>
-      </ul>
+    <div className="footer-container">
+      <footer className="footer">
+        <ul className="footer-menu">
+          <li>
+            <a href="">Contact</a>
+          </li>
+        </ul>
+      </footer>
     </div>
   )
 }

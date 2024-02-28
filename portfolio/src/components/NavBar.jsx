@@ -2,21 +2,21 @@ import '../assets/nav.css'
 
 function NavBar(){
   return(
-    <div className='nav'>
+    <div className='navbar-container'>
       <header>
-        <nav className='nav'>
-          <ul>
-            <li>
-              <a href="">Home</a>
+        <nav className='navbar'>
+          <ul className='nav-menu'>
+            <li className='nav-item'>
+              <a href="#" className='nav-link'>Home</a>
             </li>
             <li>
-              <a href="">Projects</a>
+              <a href="#" className='nav-link'>Projects</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="#" className='nav-link'>Contact</a>
             </li>
             <li>
-              <a href="">Other</a>
+              <a href="#" className='nav-link'>Other</a>
             </li>
           </ul>
         </nav>
