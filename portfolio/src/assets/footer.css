@@ -10,16 +10,16 @@
   display: flex;
 }
 
-.nav-item {
+.footer-item {
   margin-right: 10px;
 }
 
-.nav-link {
+.footer-link {
   text-decoration: none;
   color: white;
   padding: 5px 10px;
 }
 
-.nav-link:hover {
+.footer-link:hover {
   background-color: #555;
 }

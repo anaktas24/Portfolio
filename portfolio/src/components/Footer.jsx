@@ -6,7 +6,7 @@ function Footer(){
       <footer className="footer">
         <ul className="footer-menu">
           <li>
-            <a href="">Contact</a>
+            <a href="#" className='footer-link'>Contact</a>
           </li>
         </ul>
       </footer>
