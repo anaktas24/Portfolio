@@ -3,6 +3,10 @@ import * as THREE from 'three';
 
 const SolarSystem = () => {
   const containerRef = useRef(null);
+  const cameraRef = useRef(null);
+  const sceneRef = useRef(null);
+  const mouseRef = useRef({ x: 0, y: 0 });
+  const isDragging = useRef(false);
 
   useEffect(() => {
     // Set up the scene, camera, and renderer
@@ -29,26 +33,47 @@ const SolarSystem = () => {
     earthMesh.position.set(10, 0, 0); // Example position, adjust as needed
     earthOrbit.add(earthMesh);
 
-    // Example: Mars
-    const marsOrbit = new THREE.Object3D();
-    scene.add(marsOrbit);
-    const marsGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const marsMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-    const marsMesh = new THREE.Mesh(marsGeometry, marsMaterial);
-    marsMesh.position.set(15, 0, 0); // Example position, adjust as needed
-    marsOrbit.add(marsMesh);
-
     // Example: Linking Planets (Click Event)
     earthMesh.onClick = () => {
       window.location.href = '/earth';
     };
 
-    marsMesh.onClick = () => {
-      window.location.href = '/mars';
-    };
-
     // Set up the camera position
     camera.position.z = 20;
+
+    // Store references
+    cameraRef.current = camera;
+    sceneRef.current = scene;
+
+    const handleMouseDown = (event) => {
+      isDragging.current = true;
+      mouseRef.current.x = event.clientX;
+      mouseRef.current.y = event.clientY;
+    };
+
+    const handleMouseMove = (event) => {
+      if (!isDragging.current) return;
+
+      const deltaX = event.clientX - mouseRef.current.x;
+      const deltaY = event.clientY - mouseRef.current.y;
+
+      const rotationSpeed = 0.01;
+
+      sceneRef.current.rotation.y += deltaX * rotationSpeed;
+      sceneRef.current.rotation.x += deltaY * rotationSpeed;
+
+      mouseRef.current.x = event.clientX;
+      mouseRef.current.y = event.clientY;
+    };
+
+    const handleMouseUp = () => {
+      isDragging.current = false;
+    };
+
+    // Add event listeners
+    containerRef.current.addEventListener('mousedown', handleMouseDown);
+    containerRef.current.addEventListener('mousemove', handleMouseMove);
+    containerRef.current.addEventListener('mouseup', handleMouseUp);
 
     // Render function
     const animate = () => {
@@ -56,9 +81,8 @@ const SolarSystem = () => {
 
       // Rotate the planets
       earthOrbit.rotation.y += 0.01;
-      marsOrbit.rotation.y += 0.01;
 
-      renderer.render(scene, camera);
+      renderer.render(scene, cameraRef.current);
     };
 
     animate();
