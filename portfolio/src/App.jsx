@@ -1,6 +1,11 @@
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
 import SolarSystem from './components/SolarSystem'
-import Earth from './components/ProjectPlanet'
+import AboutPlanet from './components/AboutPlanet'
+import GreetingsInfoPlanet from './components/GreetingsInfoPlanet'
+import HomePlanet from './components/HomePlanet'
+import ProjectPlanet from './components/ProjectPlanet'
+import ContactPlanet from './components/ContactPlanet'
+
 
 const App = () => {
   return (
