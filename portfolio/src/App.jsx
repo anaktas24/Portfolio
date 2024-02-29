@@ -1,17 +1,16 @@
-import './App.css'
-import NavBar from './components/NavBar'
-import Footer from './components/Footer'
-import Homepage from './components/Homepage'
-function App() {
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import SolarSystem from './components/SolarSystem';
+import EarthPage from './components/EarthPage'; // Create this component for Earth
 
-
+const App = () => {
   return (
-    <>
-    <NavBar/>
-    <Homepage/>
-    <Footer/>
-    </>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SolarSystem />} />
+        <Route path="/earth" component={EarthPage} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
