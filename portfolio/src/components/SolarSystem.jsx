@@ -27,12 +27,7 @@ const SolarSystem = () => {
 
     // Add background image
     const textureLoader = new THREE.TextureLoader();
-    const backgroundTexture = textureLoader.load(
-      './assets/space.jpg',
-      () => {},
-      undefined,
-      error => console.error('Error loading background image:', error)
-    );
+    const backgroundTexture = textureLoader.load()
 
     scene.background = backgroundTexture;
 
