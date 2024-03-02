@@ -1,32 +1,38 @@
-
+// SolarSystem.jsx
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import HomePlanet from './HomePlanet';
 
 function SolarSystem() {
+  const containerRef = useRef(null);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer();
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  useEffect(() => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    containerRef.current.appendChild(renderer.domElement);
+    camera.position.z = 5;
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
+    // Render the HomePlanet component directly
+    const homePlanet = <HomePlanet scene={scene} />;
 
-const geometry = new THREE.SphereGeometry( 1,20,10 );
-const material = new THREE.MeshBasicMaterial( { color: 0xFF8000 } );
-const sphere = new THREE.Mesh( geometry, material );
-scene.add( sphere );
+    // Append HomePlanet component to the scene
+    scene.add(homePlanet);
 
-camera.position.z = 5;
+    const animate = () => {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    };
+    animate();
 
-function animate() {
-	requestAnimationFrame( animate );
+    return () => {
+      renderer.dispose();
+      containerRef.current.removeChild(renderer.domElement);
+    };
+  }, []);
 
-	sphere.rotation.x += 0.01;
-	sphere.rotation.y += 0.01;
-
-	renderer.render( scene, camera );
+  return <div ref={containerRef} />;
 }
 
-animate();
-}
-
-export default SolarSystem
+export default SolarSystem;
