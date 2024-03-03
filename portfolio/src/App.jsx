@@ -4,7 +4,7 @@ import AboutPlanet from './components/AboutPlanet'
 import Sun from './components/Sun'
 import Earth from './components/Earth'
 import ProjectPlanet from './components/ProjectPlanet'
-import ContactPlanet from './components/ContactPlanet'
+import Mars from './components/Mars'
 
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/info" component={Sun} />
         <Route path="/projects" component={ProjectPlanet} />
         <Route path="/about" component={AboutPlanet} />
-        <Route path="/contact" component={ContactPlanet} />
+        <Route path="/contact" component={Mars} />
       </Routes>
     </BrowserRouter>
   );
