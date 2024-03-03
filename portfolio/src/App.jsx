@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
 import SolarSystem from './components/SolarSystem'
-import AboutPlanet from './components/AboutPlanet'
+import Saturn from './components/Saturn'
 import Sun from './components/Sun'
 import Earth from './components/Earth'
 import Venus from './components/Venus'
@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/home" component={Earth} />
         <Route path="/info" component={Sun} />
         <Route path="/projects" component={Venus} />
-        <Route path="/about" component={AboutPlanet} />
+        <Route path="/about" component={Saturn} />
         <Route path="/contact" component={Mars} />
       </Routes>
     </BrowserRouter>
