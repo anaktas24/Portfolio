@@ -19,15 +19,17 @@ const SolarSystem = () => {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    // Add sun to the scene
-    const sun = <Sun scene={scene} />;
+    // Render the Sun component and add its mesh to the scene
+    const sunMesh = <Sun scene={scene} />;
+    scene.add(sunMesh);
 
-    // Add Earth to the scene
-    const earth = <Earth scene={scene} />;
+    // Render the Earth component and add its mesh to the scene
+    const earthMesh = <Earth scene={scene} />;
+    scene.add(earthMesh);
 
     // Add background image
     const textureLoader = new THREE.TextureLoader();
-    const backgroundTexture = textureLoader.load()
+    const backgroundTexture = textureLoader.load('./assets/background.jpg');
 
     scene.background = backgroundTexture;
 
