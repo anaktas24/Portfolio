@@ -5,6 +5,7 @@ import Sun from './Sun';
 import Earth from './Earth';
 import Mars from './Mars';
 import Saturn from './Saturn';
+import Venus from './Venus';
 
 const SolarSystem = () => {
   const containerRef = useRef(null);
@@ -42,6 +43,12 @@ const SolarSystem = () => {
         saturnMesh.position.x = 8 * Math.cos(Date.now() * 0.0011);
         saturnMesh.position.z = 8 * Math.sin(Date.now() * 0.0011);
       }
+      //Rotate venus around sun
+      const venusMesh = scene.getObjectByName("venusMesh");
+      if (venusMesh) {
+        venusMesh.position.x = 4 * Math.cos(Date.now() * 0.006);
+        venusMesh.position.z = 4 * Math.sin(Date.now() * 0.006);
+      }
 
 
       renderer.render(scene, camera);
@@ -61,6 +68,7 @@ const SolarSystem = () => {
       <Earth scene={scene} />
       <Mars scene={scene}/>
       <Saturn scene={scene}/>
+      <Venus scene={scene}/>
     </div>
   );
 };
