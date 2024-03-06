@@ -22,6 +22,7 @@ const SolarSystem = () => {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
+
     const animate = () => {
       requestAnimationFrame(animate);
 
@@ -37,12 +38,13 @@ const SolarSystem = () => {
         marsMesh.position.x = 3 * Math.cos(Date.now() * 0.002);
         marsMesh.position.z = 3 * Math.sin(Date.now() * 0.002);
       }
-      //Rotate Saturn around sun
+      // Rotate Saturn around the Sun
       const saturnMesh = scene.getObjectByName("saturnMesh");
       if (saturnMesh) {
-        saturnMesh.position.x = 8 * Math.cos(Date.now() * 0.0011);
-        saturnMesh.position.z = 8 * Math.sin(Date.now() * 0.0011);
+        saturnMesh.position.x = 9 * Math.cos(Date.now() * 0.001);
+        saturnMesh.position.z = 9 * Math.sin(Date.now() * 0.001);
       }
+
       //Rotate venus around sun
       const venusMesh = scene.getObjectByName("venusMesh");
       if (venusMesh) {
