@@ -14,7 +14,7 @@ const Sun = ({ scene }) => {
     };
   }, [scene]);
 
-  // Return the mesh object directly
+  // Return null since we don't need to render anything in the component
   return null;
 };
 
