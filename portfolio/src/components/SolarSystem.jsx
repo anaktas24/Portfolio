@@ -10,13 +10,14 @@ import Venus from './Venus';
 const SolarSystem = () => {
   const containerRef = useRef(null);
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 100);
   const renderer = new THREE.WebGLRenderer();
 
   useEffect(() => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     containerRef.current.appendChild(renderer.domElement);
     camera.position.set(0, 0, 20);
+
 
     // Add ambient light to the scene
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
