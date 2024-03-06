@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import Sun from './Sun';
 import Earth from './Earth';
+import Mars from './Mars';
+import Saturn from './Saturn';
 
 const SolarSystem = () => {
   const containerRef = useRef(null);
@@ -28,6 +30,19 @@ const SolarSystem = () => {
         earthMesh.position.x = 5 * Math.cos(Date.now() * 0.001);
         earthMesh.position.z = 5 * Math.sin(Date.now() * 0.001);
       }
+      // Rotate Mars around the sun
+      const marsMesh = scene.getObjectByName("marsMesh");
+      if (marsMesh) {
+        marsMesh.position.x = 3 * Math.cos(Date.now() * 0.002);
+        marsMesh.position.z = 3 * Math.sin(Date.now() * 0.002);
+      }
+      //Rotate Saturn around sun
+      const saturnMesh = scene.getObjectByName("saturnMesh");
+      if (saturnMesh) {
+        saturnMesh.position.x = 8 * Math.cos(Date.now() * 0.0011);
+        saturnMesh.position.z = 8 * Math.sin(Date.now() * 0.0011);
+      }
+
 
       renderer.render(scene, camera);
     };
@@ -44,6 +59,8 @@ const SolarSystem = () => {
       {/* Render Sun and Earth components */}
       <Sun scene={scene} />
       <Earth scene={scene} />
+      <Mars scene={scene}/>
+      <Saturn scene={scene}/>
     </div>
   );
 };
