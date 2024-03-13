@@ -35,16 +35,16 @@ const SolarSystem = () => {
               child.position.z = 5 * Math.sin(time);
               break;
             case "marsMesh":
-              child.position.x = 3 * Math.cos(time * 0.002);
-              child.position.z = 3 * Math.sin(time * 0.002);
+              child.position.x = 7 * Math.cos(time);
+              child.position.z = 7 * Math.sin(time);
               break;
             case "saturnMesh":
               child.position.x = 9 * Math.cos(time);
               child.position.z = 9 * Math.sin(time);
               break;
             case "venusMesh":
-              child.position.x = 4 * Math.cos(time * 0.006);
-              child.position.z = 4 * Math.sin(time * 0.006);
+              child.position.x = 4 * Math.cos(time);
+              child.position.z = 4 * Math.sin(time);
               break;
             default:
               break;
