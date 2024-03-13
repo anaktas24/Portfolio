@@ -1,4 +1,3 @@
-// SolarSystem.jsx
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import Sun from './Sun';
@@ -16,43 +15,42 @@ const SolarSystem = () => {
   useEffect(() => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     containerRef.current.appendChild(renderer.domElement);
-    camera.position.set(0, 0, 20);
-
+    camera.position.set(0, 10, 17);
 
     // Add ambient light to the scene
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-
     const animate = () => {
       requestAnimationFrame(animate);
 
-      // Rotate the Earth around the sun
-      const earthMesh = scene.getObjectByName("earthMesh");
-      if (earthMesh) {
-        earthMesh.position.x = 5 * Math.cos(Date.now() * 0.001);
-        earthMesh.position.z = 5 * Math.sin(Date.now() * 0.001);
-      }
-      // Rotate Mars around the sun
-      const marsMesh = scene.getObjectByName("marsMesh");
-      if (marsMesh) {
-        marsMesh.position.x = 3 * Math.cos(Date.now() * 0.002);
-        marsMesh.position.z = 3 * Math.sin(Date.now() * 0.002);
-      }
-      // Rotate Saturn around the Sun
-      const saturnMesh = scene.getObjectByName("saturnMesh");
-      if (saturnMesh) {
-        saturnMesh.position.x = 9 * Math.cos(Date.now() * 0.001);
-        saturnMesh.position.z = 9 * Math.sin(Date.now() * 0.001);
-      }
+      // Rotate planets around the sun
+      const time = Date.now() * 0.001;
 
-      //Rotate venus around sun
-      const venusMesh = scene.getObjectByName("venusMesh");
-      if (venusMesh) {
-        venusMesh.position.x = 4 * Math.cos(Date.now() * 0.006);
-        venusMesh.position.z = 4 * Math.sin(Date.now() * 0.006);
-      }
-
+      scene.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          switch (child.name) {
+            case "earthMesh":
+              child.position.x = 5 * Math.cos(time);
+              child.position.z = 5 * Math.sin(time);
+              break;
+            case "marsMesh":
+              child.position.x = 3 * Math.cos(time * 0.002);
+              child.position.z = 3 * Math.sin(time * 0.002);
+              break;
+            case "saturnMesh":
+              child.position.x = 9 * Math.cos(time);
+              child.position.z = 9 * Math.sin(time);
+              break;
+            case "venusMesh":
+              child.position.x = 4 * Math.cos(time * 0.006);
+              child.position.z = 4 * Math.sin(time * 0.006);
+              break;
+            default:
+              break;
+          }
+        }
+      });
 
       renderer.render(scene, camera);
     };
@@ -66,7 +64,7 @@ const SolarSystem = () => {
 
   return (
     <div ref={containerRef}>
-      {/* Render Sun and Earth components */}
+      {/* Render Sun and Planets components */}
       <Sun scene={scene} />
       <Earth scene={scene} />
       <Mars scene={scene}/>
