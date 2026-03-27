@@ -14,7 +14,7 @@ const FIXED_CAMERA_OFFSET: Partial<Record<string, THREE.Vector3>> = {
   blackhole: new THREE.Vector3(12, 6, 12),
 }
 
-const SPACE_CAMERA_POS = new THREE.Vector3(0, 45, 90)
+const SPACE_CAMERA_POS = new THREE.Vector3(0, 100, 180)
 const SPACE_LOOK_AT = new THREE.Vector3(0, 0, 0)
 const PLANET_CAMERA_OFFSET = new THREE.Vector3(10, 5, 10)
 

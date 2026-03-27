@@ -19,14 +19,14 @@ import { PLANETS } from '../data/planets'
 export default function Scene() {
   return (
     <Canvas
-      camera={{ position: [0, 45, 90], fov: 60 }}
+      camera={{ position: [0, 100, 180], fov: 60 }}
       gl={{ antialias: true }}
       style={{ background: '#000008' }}
     >
       <Suspense fallback={null}>
         {/* Lighting — main source is the sun (pointLight at origin) */}
         <ambientLight intensity={0.08} />
-        <pointLight position={[0, 0, 0]} intensity={4} distance={250} color="#FFF9C4" />
+        <pointLight position={[0, 0, 0]} intensity={4} distance={400} color="#FFF9C4" />
 
         {/* Star field */}
         <Stars radius={160} depth={60} count={9000} factor={4} saturation={0} fade speed={0.4} />

@@ -163,7 +163,7 @@ export default function HUD() {
               whiteSpace: 'nowrap',
             }}
           >
-            Six planets · One black hole · Infinite space
+            Eight planets · One black hole · Infinite space
           </motion.div>
         )}
       </AnimatePresence>
