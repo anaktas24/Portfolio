@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type PlanetId = 'sun' | 'venus' | 'earth' | 'mars' | 'saturn' | 'uranus' | 'blackhole'
+export type PlanetId = 'sun' | 'mercury' | 'venus' | 'earth' | 'mars' | 'jupiter' | 'saturn' | 'uranus' | 'neptune' | 'blackhole'
 
 interface StoreState {
   focusedPlanet: PlanetId | null

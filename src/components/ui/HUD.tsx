@@ -6,6 +6,14 @@ const PLANET_INFO: Record<PlanetId, { section: string; description: string; link
     section: 'Home',
     description: 'The center of it all.',
   },
+  mercury: {
+    section: 'Education',
+    description: 'Where it all started.',
+  },
+  venus: {
+    section: 'Achievements',
+    description: 'Milestones worth celebrating.',
+  },
   earth: {
     section: 'About Me',
     description: 'My story, my world.',
@@ -14,7 +22,7 @@ const PLANET_INFO: Record<PlanetId, { section: string; description: string; link
     section: 'Projects',
     description: 'Things I\'ve built and shipped.',
   },
-  venus: {
+  jupiter: {
     section: 'Skills',
     description: 'The tools in my belt.',
   },
@@ -25,6 +33,10 @@ const PLANET_INFO: Record<PlanetId, { section: string; description: string; link
   uranus: {
     section: 'Experience',
     description: 'My professional journey.',
+  },
+  neptune: {
+    section: 'Open Source',
+    description: 'Giving back to the community.',
   },
   blackhole: {
     section: 'Author Website',

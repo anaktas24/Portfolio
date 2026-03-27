@@ -62,8 +62,8 @@ export default function Saturn() {
       color="#FFA726"
       emissive="#E65100"
       radius={1.8}
-      orbitRadius={36}
-      orbitSpeed={0.14}
+      orbitRadius={50}
+      orbitSpeed={0.12}
       initialAngle={Math.PI * 1.5}
       rings={<SaturnRings />}
     >

@@ -80,8 +80,8 @@ export default function Uranus() {
       color="#26C6DA"
       emissive="#00838F"
       radius={1.6}
-      orbitRadius={46}
-      orbitSpeed={0.09}
+      orbitRadius={64}
+      orbitSpeed={0.08}
       initialAngle={Math.PI * 0.7}
       rings={<UranusRings />}
     >

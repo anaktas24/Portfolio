@@ -6,11 +6,14 @@ import CameraController from './CameraController'
 import Sun from './Sun'
 import BlackHole from './BlackHole'
 import OrbitPath from './OrbitPath'
+import Mercury from './planets/Mercury'
+import Venus from './planets/Venus'
 import Earth from './planets/Earth'
 import Mars from './planets/Mars'
-import Venus from './planets/Venus'
+import Jupiter from './planets/Jupiter'
 import Saturn from './planets/Saturn'
 import Uranus from './planets/Uranus'
+import Neptune from './planets/Neptune'
 import { PLANETS } from '../data/planets'
 
 export default function Scene() {
@@ -42,12 +45,15 @@ export default function Scene() {
           <OrbitPath key={planet.id} radius={planet.orbitRadius} />
         ))}
 
-        {/* Planets */}
+        {/* Planets — in order from the Sun */}
+        <Mercury />
         <Venus />
         <Earth />
         <Mars />
+        <Jupiter />
         <Saturn />
         <Uranus />
+        <Neptune />
 
         {/* Post-processing */}
         <EffectComposer>
