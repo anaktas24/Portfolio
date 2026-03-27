@@ -42,11 +42,11 @@ export function SaturnRings() {
   return (
     <>
       <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[2.4, 3.6, 128]} />
+        <ringGeometry args={[5.5, 7.8, 128]} />
         <meshStandardMaterial color="#C8A96E" emissive="#A1732A" emissiveIntensity={0.4} side={THREE.DoubleSide} transparent opacity={0.75} />
       </mesh>
       <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[3.8, 4.6, 128]} />
+        <ringGeometry args={[8.2, 9.8, 128]} />
         <meshStandardMaterial color="#9E7B3F" emissive="#6D4C22" emissiveIntensity={0.2} side={THREE.DoubleSide} transparent opacity={0.4} />
       </mesh>
     </>
@@ -61,8 +61,8 @@ export default function Saturn() {
       section="Contact"
       color="#FFA726"
       emissive="#E65100"
-      radius={1.8}
-      orbitRadius={50}
+      radius={4.0}
+      orbitRadius={62}
       orbitSpeed={0.12}
       initialAngle={Math.PI * 1.5}
       rings={<SaturnRings />}

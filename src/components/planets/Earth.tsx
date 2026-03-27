@@ -36,8 +36,8 @@ export default function Earth() {
       section="About Me"
       color="#29B6F6"
       emissive="#0277BD"
-      radius={1.4}
-      orbitRadius={20}
+      radius={3.0}
+      orbitRadius={24}
       orbitSpeed={0.3}
       initialAngle={Math.PI / 3}
     >

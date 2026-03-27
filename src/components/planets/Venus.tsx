@@ -58,8 +58,8 @@ export default function Venus() {
       section="Achievements"
       color="#FFCC02"
       emissive="#FF9800"
-      radius={1.2}
-      orbitRadius={14}
+      radius={2.6}
+      orbitRadius={17}
       orbitSpeed={0.4}
       initialAngle={0}
     >

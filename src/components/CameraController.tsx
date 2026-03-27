@@ -7,16 +7,16 @@ import { planetWorldPositions } from '../utils/planetPositions'
 // Fixed positions for non-orbiting objects
 const FIXED_LOOK_AT: Partial<Record<string, THREE.Vector3>> = {
   sun: new THREE.Vector3(0, 0, 0),
-  blackhole: new THREE.Vector3(85, 0, -40),
+  blackhole: new THREE.Vector3(-130, 0, 0),
 }
 const FIXED_CAMERA_OFFSET: Partial<Record<string, THREE.Vector3>> = {
   sun: new THREE.Vector3(10, 5, 12),
-  blackhole: new THREE.Vector3(12, 6, 12),
+  blackhole: new THREE.Vector3(16, 8, 16),
 }
 
-const SPACE_CAMERA_POS = new THREE.Vector3(0, 100, 180)
-const SPACE_LOOK_AT = new THREE.Vector3(0, 0, 0)
-const PLANET_CAMERA_OFFSET = new THREE.Vector3(10, 5, 10)
+const SPACE_CAMERA_POS = new THREE.Vector3(-20, 80, 150)
+const SPACE_LOOK_AT = new THREE.Vector3(-20, 0, 0)
+const PLANET_CAMERA_OFFSET = new THREE.Vector3(16, 8, 16)
 
 export default function CameraController() {
   const { camera } = useThree()

@@ -5,7 +5,6 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import CameraController from './CameraController'
 import Sun from './Sun'
 import BlackHole from './BlackHole'
-import OrbitPath from './OrbitPath'
 import Mercury from './planets/Mercury'
 import Venus from './planets/Venus'
 import Earth from './planets/Earth'
@@ -14,12 +13,11 @@ import Jupiter from './planets/Jupiter'
 import Saturn from './planets/Saturn'
 import Uranus from './planets/Uranus'
 import Neptune from './planets/Neptune'
-import { PLANETS } from '../data/planets'
 
 export default function Scene() {
   return (
     <Canvas
-      camera={{ position: [0, 100, 180], fov: 60 }}
+      camera={{ position: [-20, 80, 150], fov: 60 }}
       gl={{ antialias: true }}
       style={{ background: '#000008' }}
     >
@@ -39,11 +37,6 @@ export default function Scene() {
 
         {/* Black hole at edge of the scene */}
         <BlackHole />
-
-        {/* Orbit paths */}
-        {PLANETS.map((planet) => (
-          <OrbitPath key={planet.id} radius={planet.orbitRadius} />
-        ))}
 
         {/* Planets — in order from the Sun */}
         <Mercury />

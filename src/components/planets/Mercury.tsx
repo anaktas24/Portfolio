@@ -62,8 +62,8 @@ export default function Mercury() {
       section="Education"
       color="#B0BEC5"
       emissive="#546E7A"
-      radius={0.7}
-      orbitRadius={8}
+      radius={1.6}
+      orbitRadius={10}
       orbitSpeed={0.7}
       initialAngle={Math.PI / 4}
     >

@@ -4,7 +4,7 @@ import { Html } from '@react-three/drei'
 import * as THREE from 'three'
 import { useStore } from '../store/useStore'
 
-const BLACK_HOLE_POSITION: [number, number, number] = [85, 0, -40]
+const BLACK_HOLE_POSITION: [number, number, number] = [-130, 0, 0]
 
 export default function BlackHole() {
   const diskRef = useRef<THREE.Mesh>(null)
@@ -30,36 +30,36 @@ export default function BlackHole() {
         <meshStandardMaterial color="#000000" emissive="#000000" roughness={1} />
       </mesh>
 
-      {/* Inner accretion disk */}
+      {/* Inner accretion disk — deep orange, Interstellar-style */}
       <mesh ref={diskRef} rotation={[Math.PI / 7, 0, 0]}>
-        <torusGeometry args={[5, 1.2, 16, 128]} />
+        <torusGeometry args={[5, 1.4, 16, 128]} />
         <meshStandardMaterial
-          color="#7B1FA2"
-          emissive="#9C27B0"
+          color="#FF6F00"
+          emissive="#BF360C"
           emissiveIntensity={2.5}
           transparent
-          opacity={0.85}
+          opacity={0.9}
         />
       </mesh>
 
-      {/* Outer accretion disk */}
+      {/* Outer accretion disk — deep purple, fades out */}
       <mesh ref={outerDiskRef} rotation={[Math.PI / 7, 0, 0]}>
-        <torusGeometry args={[7, 0.6, 16, 128]} />
+        <torusGeometry args={[7.5, 0.7, 16, 128]} />
         <meshStandardMaterial
-          color="#E91E63"
-          emissive="#E91E63"
-          emissiveIntensity={1.8}
+          color="#6A1B9A"
+          emissive="#4A148C"
+          emissiveIntensity={1.5}
           transparent
-          opacity={0.5}
+          opacity={0.45}
         />
       </mesh>
 
       {/* Label */}
       {!isFocused && (
-        <Html center position={[0, 5, 0]} distanceFactor={120} style={{ pointerEvents: 'none' }}>
+        <Html center position={[0, 5.5, 0]} distanceFactor={150} style={{ pointerEvents: 'none' }}>
           <div style={{ color: '#CE93D8', fontSize: 11, fontFamily: 'monospace', letterSpacing: 3, textTransform: 'uppercase', opacity: 0.8, whiteSpace: 'nowrap', textAlign: 'center' }}>
             <div>The Void</div>
-            <div style={{ fontSize: 9, color: '#E91E63', marginTop: 2 }}>Author Website</div>
+            <div style={{ fontSize: 9, color: '#FF6F00', marginTop: 2 }}>Author Website</div>
           </div>
         </Html>
       )}

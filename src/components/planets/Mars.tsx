@@ -42,8 +42,8 @@ export default function Mars() {
       section="Projects"
       color="#EF5350"
       emissive="#B71C1C"
-      radius={1.1}
-      orbitRadius={27}
+      radius={2.4}
+      orbitRadius={32}
       orbitSpeed={0.22}
       initialAngle={Math.PI}
     >

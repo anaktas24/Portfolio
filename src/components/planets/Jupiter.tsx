@@ -34,9 +34,9 @@ function SkillOrb({ position, label, color }: {
 function StormBands() {
   return (
     <>
-      {[-0.6, 0, 0.6].map((y, i) => (
+      {[-1.0, 0, 1.0].map((y, i) => (
         <mesh key={y} position={[0, y, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[2.6, 0.08, 8, 128]} />
+          <torusGeometry args={[6.2, 0.15, 8, 128]} />
           <meshStandardMaterial
             color="#FF8A65"
             emissive="#BF360C"
@@ -69,8 +69,8 @@ export default function Jupiter() {
       section="Skills"
       color="#FF8A65"
       emissive="#E64A19"
-      radius={2.5}
-      orbitRadius={38}
+      radius={5.5}
+      orbitRadius={46}
       orbitSpeed={0.16}
       initialAngle={Math.PI / 2}
       rings={<StormBands />}

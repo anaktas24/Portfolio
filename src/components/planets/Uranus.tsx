@@ -46,11 +46,11 @@ function UranusRings() {
   return (
     <>
       <mesh rotation={[0, 0, Math.PI / 2]}>
-        <ringGeometry args={[2.1, 2.9, 128]} />
+        <ringGeometry args={[4.6, 6.2, 128]} />
         <meshStandardMaterial color="#80DEEA" emissive="#00838F" emissiveIntensity={0.5} side={THREE.DoubleSide} transparent opacity={0.55} />
       </mesh>
       <mesh rotation={[0, 0, Math.PI / 2]}>
-        <ringGeometry args={[3.1, 3.6, 128]} />
+        <ringGeometry args={[6.6, 7.5, 128]} />
         <meshStandardMaterial color="#4DD0E1" emissive="#006064" emissiveIntensity={0.3} side={THREE.DoubleSide} transparent opacity={0.3} />
       </mesh>
     </>
@@ -79,8 +79,8 @@ export default function Uranus() {
       section="Experience"
       color="#26C6DA"
       emissive="#00838F"
-      radius={1.6}
-      orbitRadius={64}
+      radius={3.4}
+      orbitRadius={78}
       orbitSpeed={0.08}
       initialAngle={Math.PI * 0.7}
       rings={<UranusRings />}

@@ -44,7 +44,7 @@ function RepoCard({ position, name, description, stars, color }: {
 function NeptuneRings() {
   return (
     <mesh rotation={[Math.PI / 2, 0, 0]}>
-      <ringGeometry args={[2.2, 2.8, 128]} />
+      <ringGeometry args={[4.4, 5.6, 128]} />
       <meshStandardMaterial
         color="#3F51B5"
         emissive="#1A237E"
@@ -77,15 +77,15 @@ export default function Neptune() {
       section="Open Source"
       color="#3F51B5"
       emissive="#1A237E"
-      radius={1.5}
-      orbitRadius={78}
+      radius={3.2}
+      orbitRadius={94}
       orbitSpeed={0.04}
       initialAngle={Math.PI * 1.2}
       rings={<NeptuneRings />}
     >
       {/* Slow rotating atmosphere shell */}
       <mesh ref={atmosphereRef}>
-        <sphereGeometry args={[1.75, 32, 32]} />
+        <sphereGeometry args={[3.8, 32, 32]} />
         <meshStandardMaterial color="#3F51B5" emissive="#283593" emissiveIntensity={0.4} transparent opacity={0.08} side={THREE.BackSide} />
       </mesh>
 
